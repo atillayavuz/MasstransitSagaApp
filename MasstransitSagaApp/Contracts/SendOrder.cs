@@ -4,6 +4,8 @@ namespace Contracts
 {
     public class SendOrder
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
+
+        public int Quantity { get; set; }
     }
 }
