@@ -9,8 +9,8 @@ namespace Order
     {
         public Task Consume(ConsumeContext<SendOrder> context)
         {
-            Console.WriteLine($"Order with {context.Message.Id} accepted.");
+            Console.WriteLine($"Order with {context.Message.Id} accepted."); 
             return Task.FromResult(0);
         }
-    } 
+    }
 }

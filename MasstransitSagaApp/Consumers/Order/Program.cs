@@ -1,4 +1,5 @@
-﻿using MassTransit;
+﻿using GreenPipes;
+using MassTransit;
 using System;
 
 namespace Order
@@ -15,7 +16,9 @@ namespace Order
                     h.Password("bitnami");
                 });
 
-                config.ReceiveEndpoint(host, "notification-queue", ep => {
+                config.ReceiveEndpoint(host, "order-queue", ep =>
+                {
+                    ep.UseRetry(r => r.Immediate(3));
                     ep.Consumer<OrderConsumer>();
                 });
             });
