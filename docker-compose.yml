@@ -12,6 +12,9 @@ services:
       - '15672:15672'
     volumes:
       - 'rabbitmq_data:/bitnami'
+    environment:
+     - RABBITMQ_USERNAME=guest
+     - RABBITMQ_PASSWORD=guest
 volumes:
   rabbitmq_data:
     driver: local
